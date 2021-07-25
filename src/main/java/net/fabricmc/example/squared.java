@@ -1,10 +1,10 @@
 package us.acei.squared;
 
-import net.fabricmc.api.ModInitializer;
+import java.util.Arrays;
+import java.util.function.Consumer;
 
-public class squared implements ModInitializer {
-	@Override
-	public void onInitialize() {
+public class squared implements ClientModInitializer {
+	public void onInitializeClient() {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.

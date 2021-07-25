@@ -11,15 +11,6 @@ version = project.mod_version
 group = project.maven_group
 
 repositories {
-    mavenLocal()
-    maven {
-        name 'AperLambda'
-        url 'https://aperlambda.github.io/maven'
-    }
-    maven {
-        name 'Gegy'
-        url 'https://maven.gegy.dev'
-    }
 }
 
 dependencies {
@@ -33,9 +24,6 @@ dependencies {
 
 	// PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
 	// You may need to force-disable transitiveness on them.
-
-	modImplementation "dev.lambdaurora:spruceui:${project.spruceui_version}"
-    include "dev.lambdaurora:spruceui:${project.spruceui_version}"
 }
 
 processResources {
