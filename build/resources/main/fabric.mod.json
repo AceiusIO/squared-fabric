@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "squared",
-  "version": "${version}",
+  "version": "1.0.0",
 
   "name": "Squared Client",
   "description": "This is an example description! Tell everyone what your mod is about!",
