@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.function.Consumer;
 import net.fabricmc.api.ModInitializer;
 
+import us.acei.squared.*;
+
 public class squared implements ModInitializer {
 	@Override
 	public void onInitialize() {
@@ -11,6 +13,8 @@ public class squared implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
-		System.out.println("[SQ] INITALISED! :D");
+		System.out.println("Squared has initalised! :D");
+		
+		print.sqprint("Preparing to define a GUI");
 	}
 }
