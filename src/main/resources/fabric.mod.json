@@ -1,38 +1,36 @@
 {
   "schemaVersion": 1,
-  "id": "squared",
+  "id": "mod_id",
   "version": "${version}",
-
-  "name": "Squared Client",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Mod Name",
+  "description": "Mod Description",
   "authors": [
-    "AceiusIO"
+    "Author"
   ],
   "contact": {
-    "homepage": "https://squared.acei.us/",
-    "sources": "https://github.com/AceiusIO/squared-fabric"
+    "homepage": "https://example.com/",
+    "issues": "https://example.com/",
+    "sources": "https://example.com/"
   },
-
-  "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
-
+  "license": "GNU Lesser General Public License version 3 (LGPLv3)",
+  "icon": "assets/mod_name/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "us.acei.squared.squared"
+      {
+        "adapter": "kotlin",
+        "value": "com.mod_author.mod_id.ModName"
+      }
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "mod_id.mixins.json"
   ],
-
   "depends": {
-    "fabricloader": ">=0.11.3",
+    "fabricloader": ">=0.11.6",
     "fabric": "*",
+    "fabric-language-kotlin": ">=1.6.3+kotlin.1.5.21",
     "minecraft": "1.17.x",
     "java": ">=16"
-  },
-  "suggests": {
-    "sodium": "*"
   }
 }

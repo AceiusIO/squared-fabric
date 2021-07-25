@@ -23,12 +23,12 @@ mouseSensitivity:0.5
 fov:0.0
 screenEffectScale:1.0
 fovEffectScale:1.0
-gamma:0.0
-renderDistance:12
+gamma:1.0
+renderDistance:8
 entityDistanceScaling:1.0
 guiScale:0
 particles:0
-maxFps:120
+maxFps:60
 difficulty:2
 graphicsMode:1
 ao:2
@@ -102,6 +102,9 @@ key_key.hotbar.6:key.keyboard.6
 key_key.hotbar.7:key.keyboard.7
 key_key.hotbar.8:key.keyboard.8
 key_key.hotbar.9:key.keyboard.9
+key_iris.keybind.reload:key.keyboard.f5
+key_iris.keybind.toggleShaders:key.keyboard.n
+key_iris.keybind.shaderPackSelection:key.keyboard.m
 soundCategory_master:1.0
 soundCategory_music:1.0
 soundCategory_record:1.0
