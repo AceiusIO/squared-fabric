@@ -27,6 +27,7 @@ interface ClientModInitializer {
 
 public class main implements ModInitializer {
 	private static KeyBinding openClickGui_Key;
+	private static KeyBinding openSafetyGui_Key;
 
 	@Override
 	public void onInitialize() {
@@ -35,25 +36,37 @@ public class main implements ModInitializer {
 		// Proceed with mild caution.
 
 		System.out.println("Squared has initalised! :D");
-		
-		print.sqprint("Preparing to define a GUI");
 
+		print.sqprint("Binding Keys");
+
+		print.sqprint("Binding GLFW.GLFW_KEY_RIGHT_SHIFT to key.squared.click_gui");
 		openClickGui_Key = KeyBindingHelper.registerKeyBinding(new KeyBinding(
-		    "key.squared.click_gui", // The translation key of the keybinding's name
-	    	InputUtil.Type.KEYSYM, // The type of the keybinding, KEYSYM for keyboard, MOUSE for mouse.
-    		GLFW.GLFW_KEY_RIGHT_SHIFT, // The keycode of the key
-    		"category.squared.gui" // The translation key of the keybinding's category.
+		    "key.squared.click_gui",
+	    	InputUtil.Type.KEYSYM,
+    		GLFW.GLFW_KEY_RIGHT_SHIFT,
+    		"category.squared.controls"
 		));
 
+		print.sqprint("Registering @event key.squared.click_gui.wasPressed to MinecraftClient.getInstance().setScreen(new sqgui(new sqmenu()));");
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
 			while (openClickGui_Key.wasPressed()) {
-				openClickGui();
+				MinecraftClient.getInstance().setScreen(new sqgui(new sqmenu()));
 			}
 		});
-	}
 
-	public void openClickGui() {
-		//client.player.sendMessage(new LiteralText("[SQUARED] Opening click GUI..."), false);
-		MinecraftClient.getInstance().setScreen(new sqgui(new sqmenu()));
+		print.sqprint("Binding GLFW. GLFW_KEY_GRAVE_ACCENT to key.squared.safety");
+		openSafetyGui_Key = KeyBindingHelper.registerKeyBinding(new KeyBinding(
+		    "key.squared.safety",
+	    	InputUtil.Type.KEYSYM,
+			GLFW.GLFW_KEY_GRAVE_ACCENT,
+    		"category.squared.controls"
+		));
+
+		print.sqprint("Registering @event key.squared.click_gui.wasPressed to MinecraftClient.getInstance().setScreen(new sqgui(new sqmenu()));");
+		ClientTickEvents.END_CLIENT_TICK.register(client -> {
+			while (openSafetyGui_Key.wasPressed()) {
+				MinecraftClient.getInstance().setScreen(new sqgui(new sqsafety()));
+			}
+		});
 	}
 }
