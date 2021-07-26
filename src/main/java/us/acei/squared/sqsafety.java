@@ -45,7 +45,7 @@ public class sqsafety extends LightweightGuiDescription {
 
         WButton comingsoonbtn = new WButton(new LiteralText("Coming Soon!"));
         comingsoonbtn.setOnClick(() -> {
-            print.sqprint("Use P to open the vanilla social menu online, talk to a parent or guardian.");
+            print.sqprint("Use P to open the vanilla social menu online.");
             System.out.println("IMPORTANT: If you are being mistreated online, talk to a parent or guardian.");
         });
         root.add(comingsoonbtn, 0, 5, 8, 1);
@@ -53,5 +53,6 @@ public class sqsafety extends LightweightGuiDescription {
         print.sqprint("Validating Safety GUI");
         root.validate(this);
         print.sqprint("Displaying Safety GUI");
+        print.sqdebug("Coming soon");
     }
 }

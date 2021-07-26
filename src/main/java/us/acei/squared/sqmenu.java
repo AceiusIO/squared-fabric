@@ -41,7 +41,7 @@ public class sqmenu extends LightweightGuiDescription {
         root.add(sendChatMessages, 0, 2, 8, 1);
 
         sendChatMessages.setOnToggle(on -> {
-            print.sqprint("showFPSCounter set to " + on);
+            print.sqprint("sendChatMessages set to " + on);
             setting_sendChatMessages = on;
         });
 
@@ -54,8 +54,10 @@ public class sqmenu extends LightweightGuiDescription {
             setting_showFPSCounter = on;
         });
 
-        root.validate(this);
         print.sqprint("Validating Click GUI");
+        root.validate(this);
         print.sqprint("Displaying Click GUI ");
+
+        /* print.sqdebug("Current FPS is " + ((FPSMixin) client).getCurrentFPS()); */
     }
 }
