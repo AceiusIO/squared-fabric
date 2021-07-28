@@ -20,7 +20,7 @@ import net.fabricmc.api.ModInitializer;
 
 public class sqmenu extends LightweightGuiDescription {
     //SimpleConfig CONFIG = SimpleConfig.of( "config" ).provider( this::provider ).request();
-    SimpleConfig CONFIG = SimpleConfig.of("squared-settings").DefaultConfig(this::provider).request();
+    SimpleConfig CONFIG = SimpleConfig.of("squared-settings").defaultConfig(this::provider).request();
 
     private String provider(String filename) {
 		return "#Squared Settings\nfirstuse="+java.time.LocalDate.now();
