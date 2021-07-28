@@ -4,7 +4,7 @@
   "version": "${version}",
 
   "name": "Squared Client",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "description": "Squared is a all-in-one, free and open-source, with essential mods like FPS counters, shader support, keystrokes, and so much more.",
   "authors": [
     "AceiusIO"
   ],
@@ -23,7 +23,7 @@
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "squared.mixins.json"
   ],
 
   "depends": {

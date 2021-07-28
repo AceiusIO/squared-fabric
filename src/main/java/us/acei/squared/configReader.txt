@@ -1,0 +1,18 @@
+// THIS WILL BE USED IN THE FUTURE
+
+package us.acei.squared;
+
+/**
+ * configReader
+ */
+public class configReader {
+    configHandler CONFIG = configHandler.of("squared-settings").defaultConfig(this::defaultConfig).request();
+
+    private String defaultConfig(String filename) {
+		return "#Squared Settings\nfirstuse="+java.time.LocalDate.now();
+	}
+
+    public void configReader() {
+        //
+    }
+}

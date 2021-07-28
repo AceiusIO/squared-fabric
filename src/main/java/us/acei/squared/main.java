@@ -1,5 +1,6 @@
 package us.acei.squared;
 import us.acei.squared.*;
+import us.acei.squared.SimpleConfig;
 
 import org.lwjgl.glfw.*;
 
@@ -32,6 +33,8 @@ public class main implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		System.out.println("Squared has initalised! :D");
+		
+		print.sqprint("Loading config, please wait...");
 
 		print.sqprint("Binding Keys");
 

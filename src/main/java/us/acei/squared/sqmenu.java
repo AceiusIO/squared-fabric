@@ -19,12 +19,21 @@ import io.github.cottonmc.cotton.gui.*;
 import net.fabricmc.api.ModInitializer;
 
 public class sqmenu extends LightweightGuiDescription {
-    public Boolean setting_sendChatMessages = false;
-    public Boolean setting_showFPSCounter = false;
+    //SimpleConfig CONFIG = SimpleConfig.of( "config" ).provider( this::provider ).request();
+    SimpleConfig CONFIG = SimpleConfig.of("squared-settings").DefaultConfig(this::provider).request();
+
+    private String provider(String filename) {
+		return "#Squared Settings\nfirstuse="+java.time.LocalDate.now();
+	}
+
+    public Boolean setting_sendChatMessages = CONFIG.getOrDefault("sendChatMessages", false);
+    public Boolean setting_showFPSCounter = CONFIG.getOrDefault("showFPSCounter", false);
     
     //(type, startx, starty, endx, endy)
     public sqmenu() {
         print.sqprint("Preparing to define a GUI");
+        print.sqdebug("setting_sendChatMessages "+setting_sendChatMessages);
+        print.sqdebug("setting_showFPSCounter "+setting_showFPSCounter);
         WGridPanel root = new WGridPanel();
         setRootPanel(root);
         root.setSize(256, 150);
@@ -56,7 +65,7 @@ public class sqmenu extends LightweightGuiDescription {
 
         print.sqprint("Validating Click GUI");
         root.validate(this);
-        print.sqprint("Displaying Click GUI ");
+        print.sqprint("Displaying Click GUI");
 
         /* print.sqdebug("Current FPS is " + ((FPSMixin) client).getCurrentFPS()); */
     }
