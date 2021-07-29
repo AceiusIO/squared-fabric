@@ -1,5 +1,6 @@
 package us.acei.squared;
 import us.acei.squared.*;
+import us.acei.squared.SimpleConfig;
 
 import java.util.function.Consumer;
 
@@ -20,10 +21,10 @@ import net.fabricmc.api.ModInitializer;
 
 public class sqmenu extends LightweightGuiDescription {
     //SimpleConfig CONFIG = SimpleConfig.of( "config" ).provider( this::provider ).request();
-    SimpleConfig CONFIG = SimpleConfig.of("squared-settings").defaultConfig(this::provider).request();
+    SimpleConfig CONFIG = SimpleConfig.of("squared-settings").provider(this::provider).request();
 
     private String provider(String filename) {
-		return "#Squared Settings\nfirstuse="+java.time.LocalDate.now();
+		return "# Squared Settings \n sendChatMessages=false \n showFPSCounter=false";
 	}
 
     public Boolean setting_sendChatMessages = CONFIG.getOrDefault("sendChatMessages", false);
@@ -42,16 +43,19 @@ public class sqmenu extends LightweightGuiDescription {
         WSprite icon = new WSprite(new Identifier("minecraft:textures/item/repeater.png"));
         root.add(icon, 0, 0, 1, 1);
         
-        WLabel label = new WLabel(new LiteralText("Settings"));
-        root.add(label, 1, 0, 8, 1);
+        WLabel windowTitle = new WLabel(new LiteralText("Settings"));
+        root.add(windowTitle, 1, 0, 8, 1);
+
+        WLabel windowSubtitle = new WLabel(new LiteralText("Read-Only (squared-settings.properties)"));
+        root.add(windowSubtitle, 1, 1, 8, 1);
 
         WToggleButton sendChatMessages = new WToggleButton(new LiteralText("Send Chat Messages"));
         sendChatMessages.setToggle(setting_sendChatMessages);
         root.add(sendChatMessages, 0, 2, 8, 1);
 
         sendChatMessages.setOnToggle(on -> {
-            print.sqprint("sendChatMessages set to " + on);
-            setting_sendChatMessages = on;
+            sendChatMessages.setToggle(setting_showFPSCounter);
+            print.sqprint("Read-Only for now, Sorry :(");
         });
 
         WToggleButton showFPSCounter = new WToggleButton(new LiteralText("Show FPS Counter"));
@@ -59,8 +63,8 @@ public class sqmenu extends LightweightGuiDescription {
         root.add(showFPSCounter, 0, 3, 8, 1);
 
         showFPSCounter.setOnToggle(on -> {
-            print.sqprint("showFPSCounter set to " + on);
-            setting_showFPSCounter = on;
+            sendChatMessages.setToggle(setting_showFPSCounter);
+            print.sqprint("Read-Only for now, Sorry :(");
         });
 
         print.sqprint("Validating Click GUI");

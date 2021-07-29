@@ -1,6 +1,5 @@
 package us.acei.squared;
 import us.acei.squared.*;
-import us.acei.squared.SimpleConfig;
 
 import org.lwjgl.glfw.*;
 
