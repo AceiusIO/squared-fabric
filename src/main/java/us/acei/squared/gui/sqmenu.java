@@ -1,3 +1,11 @@
+/*
+ * Copyright (c) 2021 AceiusIO and contributors.
+ *
+ * This source code is subject to the terms of the GNU Lesser General Public
+ * License, version 3. If a copy of the LGPL was not distributed with this
+ * file, You can obtain one at: https://www.gnu.org/licenses/lgpl-3.0.txt
+ */
+
 package us.acei.squared;
 import us.acei.squared.*;
 import us.acei.squared.SimpleConfig;

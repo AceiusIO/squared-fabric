@@ -14,12 +14,12 @@
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/squared/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "us.acei.squared.main"
+      "us.acei.squared.SquaredFabric"
     ]
   },
   "mixins": [

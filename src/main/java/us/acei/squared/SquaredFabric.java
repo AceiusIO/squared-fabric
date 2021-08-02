@@ -1,3 +1,11 @@
+/*
+ * Copyright (c) 2021 AceiusIO and contributors.
+ *
+ * This source code is subject to the terms of the GNU Lesser General Public
+ * License, version 3. If a copy of the LGPL was not distributed with this
+ * file, You can obtain one at: https://www.gnu.org/licenses/lgpl-3.0.txt
+ */
+
 package us.acei.squared;
 import us.acei.squared.*;
 
@@ -37,7 +45,7 @@ public class main implements ModInitializer {
 
 		print.sqprint("Binding Keys");
 
-		print.sqprint("Binding GLFW.GLFW_KEY_RIGHT_SHIFT to key.squared.click_gui");
+		System.out.println("Initalising(1, ");
 		openClickGui_Key = KeyBindingHelper.registerKeyBinding(new KeyBinding(
 		    "key.squared.click_gui",
 	    	InputUtil.Type.KEYSYM,
@@ -45,14 +53,14 @@ public class main implements ModInitializer {
     		"category.squared.controls"
 		));
 
-		print.sqprint("Registering @event key.squared.click_gui.wasPressed to MinecraftClient.getInstance().setScreen(new sqgui(new sqmenu()));");
+		System.out.print("2, ");
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
 			while (openClickGui_Key.wasPressed()) {
 				MinecraftClient.getInstance().setScreen(new sqgui(new sqmenu()));
 			}
 		});
 
-		print.sqprint("Binding GLFW. GLFW_KEY_GRAVE_ACCENT to key.squared.safety");
+		System.out.print("3, ");
 		openSafetyGui_Key = KeyBindingHelper.registerKeyBinding(new KeyBinding(
 		    "key.squared.safety",
 	    	InputUtil.Type.KEYSYM,
@@ -60,7 +68,7 @@ public class main implements ModInitializer {
     		"category.squared.controls"
 		));
 
-		print.sqprint("Registering @event key.squared.click_gui.wasPressed to MinecraftClient.getInstance().setScreen(new sqgui(new sqmenu()));");
+		System.out.print("4/4) \n Done.");
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
 			while (openSafetyGui_Key.wasPressed()) {
 				MinecraftClient.getInstance().setScreen(new sqgui(new sqsafety()));
