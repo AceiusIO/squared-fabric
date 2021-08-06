@@ -28,12 +28,7 @@ import io.github.cottonmc.cotton.gui.GuiDescription;
 import io.github.cottonmc.cotton.gui.client.*;
 import io.github.cottonmc.cotton.gui.*;
 
-/*@FunctionalInterface
-interface ClientModInitializer {
-	void onInitializeClient();
-}*/
-
-public class main implements ModInitializer {
+public class SquaredFabric implements ModInitializer {
 	private static KeyBinding openClickGui_Key;
 	private static KeyBinding openSafetyGui_Key;
 
@@ -45,7 +40,7 @@ public class main implements ModInitializer {
 
 		print.sqprint("Binding Keys");
 
-		System.out.println("Initalising(1, ");
+		print.sqprint("Binding key (1/2)");
 		openClickGui_Key = KeyBindingHelper.registerKeyBinding(new KeyBinding(
 		    "key.squared.click_gui",
 	    	InputUtil.Type.KEYSYM,
@@ -53,14 +48,14 @@ public class main implements ModInitializer {
     		"category.squared.controls"
 		));
 
-		System.out.print("2, ");
+		print.sqprint("Binding key (2/2)");
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
 			while (openClickGui_Key.wasPressed()) {
 				MinecraftClient.getInstance().setScreen(new sqgui(new sqmenu()));
 			}
 		});
 
-		System.out.print("3, ");
+		print.sqprint("Binding GUI to KeyEvent (1/2)");
 		openSafetyGui_Key = KeyBindingHelper.registerKeyBinding(new KeyBinding(
 		    "key.squared.safety",
 	    	InputUtil.Type.KEYSYM,
@@ -68,11 +63,13 @@ public class main implements ModInitializer {
     		"category.squared.controls"
 		));
 
-		System.out.print("4/4) \n Done.");
+		print.sqprint("Binding GUI to KeyEvent (2/2)");
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
 			while (openSafetyGui_Key.wasPressed()) {
 				MinecraftClient.getInstance().setScreen(new sqgui(new sqsafety()));
 			}
 		});
+
+		System.out.println("=====[ Squared Has Initalised ]=====");
 	}
 }

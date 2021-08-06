@@ -1,0 +1,12 @@
+{
+    "title.squared":"Squared",
+
+    "category.squared.controls":"Squared",
+    "key.squared.click_gui":"Click GUI",
+    "key.squared.safety":"Player Safety",
+
+    "gui.squared.settings":"Settings",
+    "gui.squared.readonly":"Read-Only, See %d",
+    "gui.squared.sendchatmsgs":"Send Chat Messages",
+    "gui.squared.showfpscounter":"Show FPS counter"
+}
