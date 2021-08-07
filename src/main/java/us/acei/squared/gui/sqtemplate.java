@@ -25,26 +25,21 @@ import io.github.cottonmc.cotton.gui.GuiDescription;
 import io.github.cottonmc.cotton.gui.widget.*;
 import io.github.cottonmc.cotton.gui.*;
 
-public class sqdebug extends LightweightGuiDescription {
-    public sqdebug() {
-        print.sqprint("Loading Meta Info");
-
+public class sqtemplate extends LightweightGuiDescription {
+    public sqtemplate() {
         WGridPanel root = new WGridPanel();
         setRootPanel(root);
         root.setSize(256, 150);
         root.setInsets(Insets.ROOT_PANEL);
         
-        WSprite icon = new WSprite(new Identifier("minecraft:textures/item/paper.png"));
+        WSprite icon = new WSprite(new Identifier("minecraft:textures/block/grass_block.png"));
         root.add(icon, 0, 0, 1, 1);
         
         WLabel windowTitle = new WLabel(new TranslatableText("meta.squared.title"));
         root.add(windowTitle, 1, 0, 8, 1);
 
-        WLabel sep = new WLabel(new LiteralText("========================="));
-        root.add(sep, 0, 1, 8, 1);
-
-        WLabel lang = new WLabel(new TranslatableText("meta.squared.lang"));
-        root.add(lang, 0, 2, 8, 1);
+        WLabel wip = new WLabel(new LiteralText("Placeholder"));
+        root.add(wip, 0, 1, 8, 1);
 
         WButton back = new WButton(new LiteralText("<"));
         back.setOnClick(() -> {
@@ -55,7 +50,5 @@ public class sqdebug extends LightweightGuiDescription {
         print.sqprint("Validating Click GUI");
         root.validate(this);
         print.sqprint("Displaying Click GUI");
-
-        System.out.println("Applying settings, one moment...");
     }
 }

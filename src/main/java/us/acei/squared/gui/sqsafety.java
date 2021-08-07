@@ -55,7 +55,13 @@ public class sqsafety extends LightweightGuiDescription {
             print.sqprint("Use P to open the vanilla social menu online.");
             System.out.println("IMPORTANT: If you are being mistreated online, talk to a parent or guardian.");
         });
-        root.add(comingsoonbtn, 0, 5, 8, 1);
+        root.add(comingsoonbtn, 1, 7, 8, 1);
+
+        WButton back = new WButton(new LiteralText("<"));
+        back.setOnClick(() -> {
+            MinecraftClient.getInstance().setScreen(new sqgui(new sqmenu()));
+        });
+        root.add(back, 0, 7, 1, 1);
 
         print.sqprint("Validating Safety GUI");
         root.validate(this);
