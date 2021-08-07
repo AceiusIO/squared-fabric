@@ -5,3 +5,6 @@ Squared is a fabric mod that aims to improve quality of life in Minecraft, by ad
 It also has support for sodium, for high framerates.
 
 ## Screenshots
+
+![ClickGUI](repoSources/main1.png)  
+![Debug Screen](repoSources/debug.png)

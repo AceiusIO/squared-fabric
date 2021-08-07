@@ -105,13 +105,11 @@ public class sqmenu extends LightweightGuiDescription {
 
         /*
          * TODO: Add a class for chat printing
-         */
 
         if (setting_sendChatMessages == true) {
             player.sendMessage(new TextComponentString("[SQ] Opening Click GUI"));
         }
 
-        /*
          * TODO: Find the subclass for showing the vanilla fps counter
          * client.settings.showFPSCounter();
          */
