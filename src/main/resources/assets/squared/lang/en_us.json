@@ -1,5 +1,6 @@
 {
-    "title.squared":"Squared",
+    "meta.squared.title":"Squared",
+    "meta.squared.lang":"United States English",
 
     "category.squared.controls":"Squared",
     "key.squared.click_gui":"Click GUI",
@@ -8,5 +9,10 @@
     "gui.squared.settings":"Settings",
     "gui.squared.readonly":"Read-Only, See %d",
     "gui.squared.sendchatmsgs":"Send Chat Messages",
-    "gui.squared.showfpscounter":"Show FPS counter"
+    "gui.squared.showfpscounter":"Show FPS counter",
+
+    "gui.squared.safety":"Player Safety",
+    "gui.squared.safety.comingsoon":"IMPORTANT: If you are being mistreated",
+    "gui.squared.safety.comingsoon2":"online, talk to a parent or guardian.",
+    "gui.squared.safety.comingsoon3":"Use P to open the vanilla social menu."
 }

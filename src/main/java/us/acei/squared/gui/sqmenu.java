@@ -28,6 +28,8 @@ import io.github.cottonmc.cotton.gui.*;
 import net.fabricmc.api.ModInitializer;
 
 public class sqmenu extends LightweightGuiDescription {
+    // I normally don't use comments, but this source file is one of the longest in the source code. :|
+
     SimpleConfig CONFIG = SimpleConfig.of("squared-settings").provider(this::provider).request();
 
     private String provider(String filename) {
@@ -38,11 +40,14 @@ public class sqmenu extends LightweightGuiDescription {
     public Boolean setting_showFPSCounter = CONFIG.getOrDefault("showFPSCounter", false);
     
     public sqmenu() {
+
+        // Main Window Area
+
         print.sqprint("Loading Config...");
 
         print.sqprint("Preparing to define a GUI");
-        print.sqdebug("setting_sendChatMessages "+setting_sendChatMessages);
-        print.sqdebug("setting_showFPSCounter "+setting_showFPSCounter);
+        print.sqdebug("setting_sendChatMessages " + setting_sendChatMessages);
+        print.sqdebug("setting_showFPSCounter " + setting_showFPSCounter);
 
         WGridPanel root = new WGridPanel();
         setRootPanel(root);
@@ -72,15 +77,33 @@ public class sqmenu extends LightweightGuiDescription {
         root.add(showFPSCounter, 0, 3, 8, 1);
 
         showFPSCounter.setOnToggle(on -> {
-            sendChatMessages.setToggle(setting_showFPSCounter);
+            showFPSCounter.setToggle(setting_showFPSCounter);
             print.sqprint("Sorry, " + new TranslatableText("gui.squared.readonly", "squared-settings.properties"));
         });
+
+        // Bottom buttons
+
+        WButton debug = new WButton(new LiteralText("?"));
+        debug.setOnClick(() -> {
+            MinecraftClient.getInstance().setScreen(new sqgui(new sqdebug()));
+        });
+        root.add(debug, 0, 7, 1, 1);
+
+        WButton safety = new WButton(new LiteralText("!"));
+        safety.setOnClick(() -> {
+            MinecraftClient.getInstance().setScreen(new sqgui(new sqsafety()));
+        });
+        root.add(safety, 1, 7, 1, 1);
 
         print.sqprint("Validating Click GUI");
         root.validate(this);
         print.sqprint("Displaying Click GUI");
 
         System.out.println("Applying settings, one moment...");
-        //client.settings.showFPSCounter();
+
+        /*
+         * TODO: Find the subclass for showing the vanilla fps counter
+         * client.settings.showFPSCounter();
+         */
     }
 }

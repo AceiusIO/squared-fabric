@@ -1,0 +1,18 @@
+{
+    "meta.squared.title":"squard kelint",
+    "meta.squared.lang":"uknited steas lolcatish",
+
+    "category.squared.controls":"button for squared",
+    "key.squared.click_gui":"butonz shine",
+    "key.squared.safety":"cats be safe",
+
+    "gui.squared.settings":"opshins",
+    "gui.squared.readonly":"only read :(. see %d",
+    "gui.squared.sendchatmsgs":"yell stuff",
+    "gui.squared.showfpscounter":"show lag speed",
+
+    "gui.squared.safety":"keep kats safe",
+    "gui.squared.safety.comingsoon":"IMPORTANT: If you are being mistreated",
+    "gui.squared.safety.comingsoon2":"online, talk to a trustable cat.",
+    "gui.squared.safety.comingsoon3":"Use P to open the vanilla social menu."
+}

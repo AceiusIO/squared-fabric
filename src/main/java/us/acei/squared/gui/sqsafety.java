@@ -38,17 +38,16 @@ public class sqsafety extends LightweightGuiDescription {
         WSprite icon = new WSprite(new Identifier("minecraft:textures/item/barrier.png"));
         root.add(icon, 0, 0, 1, 1);
         
-        WLabel label = new WLabel(new LiteralText("Player Safety"));
+        WLabel label = new WLabel(new TranslatableText("gui.squared.safety"));
         root.add(label, 1, 0, 8, 1);
 
-        WLabel comingsoon = new WLabel(new LiteralText("IMPORTANT: If you are being mistreated"));
+        WLabel comingsoon = new WLabel(new TranslatableText("gui.squared.safety.comingsoon"));
         root.add(comingsoon, 0, 1, 8, 1);
 
-        WLabel comingsoon2 = new WLabel(new LiteralText("online, talk to a parent or guardian."));
-        //Coming soon, use p to open the vannilla social interactions menu.
+        WLabel comingsoon2 = new WLabel(new TranslatableText("gui.squared.safety.comingsoon2"));
         root.add(comingsoon2, 0, 2, 8, 1);
 
-        WLabel comingsoon3 = new WLabel(new LiteralText("Use P to open the vanilla social menu."));
+        WLabel comingsoon3 = new WLabel(new TranslatableText("gui.squared.safety.comingsoon3"));
         root.add(comingsoon3, 0, 3, 8, 1);
 
         WButton comingsoonbtn = new WButton(new LiteralText("Coming Soon!"));

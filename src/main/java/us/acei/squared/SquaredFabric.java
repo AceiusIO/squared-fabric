@@ -29,6 +29,12 @@ import io.github.cottonmc.cotton.gui.client.*;
 import io.github.cottonmc.cotton.gui.*;
 
 public class SquaredFabric implements ModInitializer {
+	/*
+	 * TODO: Implement time to initialise counter
+	 * private static int initTimestamp = System.currentTimeMillis();
+	 * private static int initCompletionTimestamp = System.currentTimeMillis();
+	 */
+
 	private static KeyBinding openClickGui_Key;
 	private static KeyBinding openSafetyGui_Key;
 
