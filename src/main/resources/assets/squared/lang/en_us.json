@@ -14,5 +14,7 @@
     "gui.squared.safety":"Player Safety",
     "gui.squared.safety.comingsoon":"IMPORTANT: If you are being mistreated",
     "gui.squared.safety.comingsoon2":"online, talk to a parent or guardian.",
-    "gui.squared.safety.comingsoon3":"Use P to open the vanilla social menu."
+    "gui.squared.safety.comingsoon3":"Press P to open the Vanilla Social Menu.",
+
+    "gui.squared.info.author":"Lead Developer: AceiusIO (https://acei.us)"
 }

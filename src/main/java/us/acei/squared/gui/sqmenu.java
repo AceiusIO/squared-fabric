@@ -18,6 +18,7 @@ import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.option.StickyKeyBinding;
 import net.minecraft.client.util.InputUtil;
 import net.minecraft.text.*;
+import net.minecraft.*;
 
 import io.github.cottonmc.cotton.gui.client.LightweightGuiDescription;
 import io.github.cottonmc.cotton.gui.widget.data.Insets;
@@ -40,7 +41,6 @@ public class sqmenu extends LightweightGuiDescription {
     public Boolean setting_showFPSCounter = CONFIG.getOrDefault("showFPSCounter", false);
     
     public sqmenu() {
-
         // Main Window Area
 
         print.sqprint("Loading Config...");
@@ -85,7 +85,7 @@ public class sqmenu extends LightweightGuiDescription {
 
         WButton debug = new WButton(new LiteralText("?"));
         debug.setOnClick(() -> {
-            MinecraftClient.getInstance().setScreen(new sqgui(new sqdebug()));
+            MinecraftClient.getInstance().setScreen(new sqgui(new sqinfo()));
         });
         root.add(debug, 0, 7, 1, 1);
 
@@ -95,13 +95,13 @@ public class sqmenu extends LightweightGuiDescription {
         });
         root.add(safety, 1, 7, 1, 1);
 
+        // Verify and complete initialisation
+
         print.sqprint("Validating Click GUI");
         root.validate(this);
         print.sqprint("Displaying Click GUI");
 
         System.out.println("Applying settings, one moment...");
-
-        // Send Chat Message
 
         /*
          * TODO: Add a class for chat printing

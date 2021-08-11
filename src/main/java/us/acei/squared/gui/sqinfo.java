@@ -46,6 +46,9 @@ public class sqdebug extends LightweightGuiDescription {
         WLabel lang = new WLabel(new TranslatableText("meta.squared.lang"));
         root.add(lang, 0, 2, 8, 1);
 
+        WLabel author = new WLabel(new TranslatableText("gui.squared.info.author"));
+        root.add(autho, 0, 2, 8, 1);
+
         WButton back = new WButton(new LiteralText("<"));
         back.setOnClick(() -> {
             MinecraftClient.getInstance().setScreen(new sqgui(new sqmenu()));
